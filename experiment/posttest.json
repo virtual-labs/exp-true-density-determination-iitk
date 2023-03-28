@@ -2,12 +2,12 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "1. Select the method used for determination of True density.",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Liquid displacement method",
+        "b": "Gas displacement method",
+        "c": "Both a and b",
+        "d": "None of these"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
@@ -15,16 +15,16 @@
         "c": "Explanation 2",
         "d": "Explanation 2"
       },
-      "correctAnswer": "a",
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "2. If 25 g of a liquid occupies 20ml in a measuring cylinder, what is the density of the liquid?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "0.25g/ml",
+        "b": "0.8g/ml",
+        "c": "1.25g/ml",
+        "d": "None of these"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
