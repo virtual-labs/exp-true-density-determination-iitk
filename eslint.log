@@ -1,0 +1,132 @@
+
+/home/runner/work/exp-true-density-determination-iitk/exp-true-density-determination-iitk/experiment/simulation/js/question.js
+  2:7  warning  'quiz' is assigned a value but never used  no-unused-vars
+
+/home/runner/work/exp-true-density-determination-iitk/exp-true-density-determination-iitk/experiment/simulation/js/script.js
+   11:1   warning  '$' is not defined                                    no-undef
+   11:26  warning  'e' is defined but never used                         no-unused-vars
+   37:1   warning  '$' is not defined                                    no-undef
+   37:27  warning  'e' is defined but never used                         no-unused-vars
+   50:2   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+   50:11  warning  'rbs' is already defined                              no-redeclare
+   52:22  warning  'rb' is already defined                               no-redeclare
+   91:2   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+  102:2   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+  103:2   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+  104:3   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+  105:2   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+  106:2   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+  111:2   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+  144:1   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+  146:2   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+  179:1   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+  180:1   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+  202:1   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+  214:10  warning  'ok_click' is defined but never used                  no-unused-vars
+  214:19  warning  'i' is defined but never used                         no-unused-vars
+  218:1   warning  '$' is not defined                                    no-undef
+  218:26  warning  'e' is defined but never used                         no-unused-vars
+  259:7   warning  'content' is already defined                          no-redeclare
+  289:3   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+  290:2   warning  Mixed spaces and tabs                                 no-mixed-spaces-and-tabs
+  293:1   warning  '$' is not defined                                    no-undef
+  293:25  warning  'e' is defined but never used                         no-unused-vars
+  312:6   warning  'W1' is already defined                               no-redeclare
+  313:9   warning  'W2' is already defined                               no-redeclare
+  314:9   warning  'W3' is already defined                               no-redeclare
+  315:6   warning  'W4' is already defined                               no-redeclare
+  349:10  warning  'question2' is defined but never used                 no-unused-vars
+  360:6   warning  'rbs' is already defined                              no-redeclare
+  362:22  warning  'rb' is already defined                               no-redeclare
+  371:6   warning  'rbs' is already defined                              no-redeclare
+  373:22  warning  'rb' is already defined                               no-redeclare
+  387:6   warning  'W1' is already defined                               no-redeclare
+  388:9   warning  'W2' is already defined                               no-redeclare
+  389:9   warning  'W3' is already defined                               no-redeclare
+  390:6   warning  'W4' is already defined                               no-redeclare
+  427:10  warning  'question3' is defined but never used                 no-unused-vars
+  438:6   warning  'rbs' is already defined                              no-redeclare
+  440:22  warning  'rb' is already defined                               no-redeclare
+  449:6   warning  'rbs' is already defined                              no-redeclare
+  451:22  warning  'rb' is already defined                               no-redeclare
+  465:6   warning  'W1' is already defined                               no-redeclare
+  466:9   warning  'W2' is already defined                               no-redeclare
+  467:9   warning  'W3' is already defined                               no-redeclare
+  468:6   warning  'W4' is already defined                               no-redeclare
+  505:10  warning  'question4' is defined but never used                 no-unused-vars
+  516:6   warning  'rbs' is already defined                              no-redeclare
+  518:22  warning  'rb' is already defined                               no-redeclare
+  527:6   warning  'rbs' is already defined                              no-redeclare
+  529:22  warning  'rb' is already defined                               no-redeclare
+  543:6   warning  'W1' is already defined                               no-redeclare
+  544:9   warning  'W2' is already defined                               no-redeclare
+  545:9   warning  'W3' is already defined                               no-redeclare
+  546:6   warning  'W4' is already defined                               no-redeclare
+  586:10  warning  'question5' is defined but never used                 no-unused-vars
+  597:6   warning  'rbs' is already defined                              no-redeclare
+  599:22  warning  'rb' is already defined                               no-redeclare
+  608:6   warning  'rbs' is already defined                              no-redeclare
+  610:22  warning  'rb' is already defined                               no-redeclare
+  626:6   warning  'W1' is already defined                               no-redeclare
+  627:9   warning  'W2' is already defined                               no-redeclare
+  628:9   warning  'W3' is already defined                               no-redeclare
+  629:6   warning  'W4' is already defined                               no-redeclare
+  630:9   warning  'W5' is already defined                               no-redeclare
+  631:6   warning  'W6' is already defined                               no-redeclare
+  669:10  warning  'question6' is defined but never used                 no-unused-vars
+  706:5   warning  'questionCounter' is assigned a value but never used  no-unused-vars
+  714:25  warning  'quiz' is not defined                                 no-undef
+  716:29  warning  'quiz' is not defined                                 no-undef
+  788:10  warning  'getResult' is defined but never used                 no-unused-vars
+  802:10  warning  'next' is defined but never used                      no-unused-vars
+  806:1   warning  '$' is not defined                                    no-undef
+  806:19  warning  'e' is defined but never used                         no-unused-vars
+
+/home/runner/work/exp-true-density-determination-iitk/exp-true-density-determination-iitk/experiment/simulation/js/script1.min.js
+  2:71     warning  'module' is not defined                                                    no-undef
+  2:86     warning  'module' is not defined                                                    no-undef
+  2:5821   warning  Unexpected control character(s) in regular expression: \x1f, \x1f          no-control-regex
+  2:6304   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:6528   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:7036   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:7806   warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:10072  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:10382  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:12396  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:12964  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:13002  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:13985  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:14297  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:16125  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:16396  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:16594  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:16968  warning  Do not access Object.prototype method 'hasOwnProperty' from target object  no-prototype-builtins
+  2:17658  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:19478  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:19578  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:19638  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:19822  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:20991  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:22263  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:22374  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:24540  warning  Unnecessary escape character: \/                                           no-useless-escape
+  2:34152  warning  Empty block statement                                                      no-empty
+  2:37469  warning  Unnecessary escape character: \/                                           no-useless-escape
+  2:39118  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:39234  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:39494  warning  Empty block statement                                                      no-empty
+  2:49178  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:50738  warning  Empty block statement                                                      no-empty
+  2:58825  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:60568  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:60634  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:60938  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:61004  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:61411  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:61688  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:68005  warning  Expected a conditional expression and instead saw an assignment            no-cond-assign
+  2:71878  warning  'define' is not defined                                                    no-undef
+  2:71890  warning  'define' is not defined                                                    no-undef
+
+✖ 123 problems (0 errors, 123 warnings)
+
