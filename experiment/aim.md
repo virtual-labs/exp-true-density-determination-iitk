@@ -1,1 +1,1 @@
-To determine the true density of a pharmaceutical powder sample using the solvent displacement method.
+Determination of True Density of a Pharmaceutical Powder Sample using Solvent Displacement Method
