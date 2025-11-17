@@ -17,7 +17,7 @@
 ● Slowly add the liquid to the bottle containing powder while gently swirling to avoid air entrapment. Use a vacuum pump if needed. Fill up to the mark and weigh — record as W₄.<br>
 ● Process the recorded data as described below to calculate the true density.<br>
 
-<b>Observations and Calculations:</b><br> 
+<!-- <b>Observations and Calculations:</b><br> 
 
 | **S. No.** | **Parameter** | **Symbol** | **Observation (g/mL)** | **Formula** |
 |-------------|----------------|-------------|--------------------------|--------------|
