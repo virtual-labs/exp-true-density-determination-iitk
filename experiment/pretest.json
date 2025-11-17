@@ -2,69 +2,88 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "1. True density is calculated by ________",
+      "question": "1. True density of a powder is defined as:",
       "answers": {
-        "a": "ratio of the mass to the volume occupied by that mass.",
-        "b": "ratio of the mass to the tapped volume .",
-        "c": "ratio of the mass to the bulk volume .",
-        "d": "none of these"
+        "a": "Mass of powder per unit apparent volume",
+        "b": "Mass of powder per unit true volume excluding void spaces",
+        "c": "Weight of powder per bulk volume",
+        "d": "Ratio of volume to surface area"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "2. Which property measures the resistance of a liquid to flow?",
-      "answers": {
-        "a": "Density",
-        "b": "Viscosity",
-        "c": "Volume",
-        "d": "Solubility"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Explanation",
+        "b": "Explanation",
+        "c": "Explanation",
+        "d": "Explanation"
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
     },
-    {
-      "question": "3. True density is the intrinsic propety of powders.",
+       {
+      "question": "2. The instrument commonly used in solvent displacement method is:",
       "answers": {
-        "a": "True",
-        "b": "False"
+        "a": "Pycnometer or specific gravity bottle",
+        "b": "Graduated cylinder",
+        "c": "Pipette",
+        "d": "Burette"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Explanation",
+        "b": "Explanation",
+        "c": "Explanation",
+        "d": "Explanation"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
-    {
-      "question": "4. The importance of density is in __________.",
+        {
+      "question": "3. The solvent used in the experiment should be:",
       "answers": {
-        "a": "Selection of containers",
-        "b": "Mixing of excipients",
-        "c": "Both a and b",
-        "d": "None of these"
+        "a": "One in which the powder is soluble",
+        "b": "One in which the powder is insoluble",
+        "c": "A volatile solvent only",
+        "d": "A mixture of solvents"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Explanation",
+        "b": "Explanation",
+        "c": "Explanation",
+        "d": "Explanation"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+        {
+      "question": "4. Entrapped air bubbles during the experiment will:",
+      "answers": {
+        "a": "Have no effect on result",
+        "b": "Increase true density value",
+        "c": "Cause errors by increasing apparent volume",
+        "d": "Decrease mass of displaced liquid"
+      },
+      "explanations": {
+        "a": "Explanation",
+        "b": "Explanation",
+        "c": "Explanation",
+        "d": "Explanation"
       },
       "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+        {
+      "question": "5. The true density (ρₜ) is calculated using the formula:",
+      "answers": {
+        "a": "ρₜ = Volume of powder / Weight of powder",
+        "b": "ρₜ = Weight of powder / Volume of liquid displaced by powder",
+        "c": "ρₜ = Volume of liquid / Weight of bottle",
+        "d": "ρₜ = (W₂ – W₁) / (W₄ – W₃)"
+      },
+      "explanations": {
+        "a": "Explanation",
+        "b": "Explanation",
+        "c": "Explanation",
+        "d": "Explanation"
+      },
+      "correctAnswer": "b",
       "difficulty": "beginner"
     }
   ]
