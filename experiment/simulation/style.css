@@ -4,7 +4,8 @@ body {
   padding: 0;
   width: 100vw;
   height: fit-content;
-   overflow: hidden; 
+  height: 100%;
+  overflow: auto-y; 
 }
 
 .header-container {
@@ -291,7 +292,7 @@ body {
 .instruction {
   display: flex;
   position: relative;
-  top: -2.3vw;
+  top: 2.3vw;
   left: 23vw;
   width: max-content;
   max-width: 65vw;
