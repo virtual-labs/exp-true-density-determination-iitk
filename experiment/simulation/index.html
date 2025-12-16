@@ -11,10 +11,13 @@
 <body>
   <header>
     <div class="header-container">
-      <h1>True Density Determination Lab</h1>
+      <h1>True Density Determination Lab</h1><br>
+      In this simulation, click the “Next” button to proceed and observe how the simulation works step by step.
       <div class="language-button">
-        <label for="language">Select Language</label>
+        <!-- <label for="language">Select Language</label> -->
         <select name="language" id="language" onchange="changeLang(this)">
+          <label for="powder">Select Language</label>
+          <option value="en">Select Language</option>
           <option value="en">English</option>
           <option value="hi">हिन्दी</option>
         </select>
@@ -42,7 +45,7 @@
         <div class="select-powder">
           <label for="powder">Select Powder</label>
           <select name="powder" id="select-powder" onchange="showPowder()">
-            <!-- <option value="e" hidden selected>Select an Option</option> -->
+            <option value="e" hidden selected>Select an Option</option>
             <option value="B">
               <p>Benzoic Acid <br> (HOC<sub>6</sub>H<sub>4</sub>COOH)</p>
             </option>
