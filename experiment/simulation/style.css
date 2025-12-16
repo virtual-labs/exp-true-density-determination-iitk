@@ -4,12 +4,7 @@ body {
   padding: 0;
   width: 100vw;
   height: fit-content;
-<<<<<<< HEAD
-  height: 100%;
-  overflow: auto-y; 
-=======
-  overflow: auto; 
->>>>>>> 87be156af6d8e7c24ff162b1257ab90d23fea262
+  overflow: hidden; 
 }
 
 .header-container {
