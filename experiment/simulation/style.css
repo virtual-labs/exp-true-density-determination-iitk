@@ -4,7 +4,7 @@ body {
   padding: 0;
   width: 100vw;
   height: fit-content;
-  /* overflow-x: hidden; */
+   overflow: hidden; 
 }
 
 .header-container {
@@ -13,7 +13,7 @@ body {
   width: 100%;
   height: 6vw;
   z-index: 1000;
-  background-color: #333;
+  background-color: #1bf906;
   color: white;
   padding: 10px;
   text-align: center;
@@ -33,8 +33,8 @@ body {
 .sidebar-container {
   width: 21vw;
   height: 38vw;
-  background-color: #444;
-  color: white;
+  background-color: #f9f5f5;
+  color: rgb(10, 9, 9);
   padding: 1vw;
 }
 
@@ -45,7 +45,7 @@ body {
   width: 100%;
   height: 100%;
   /* padding: 2vw; */
-  background-image: url(../images/background.png);
+  background-image: url(./images/background.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -53,7 +53,7 @@ body {
 
 .footer-container {
   width: 100vw;
-  background-color: #335e5e;
+  background-color: #335e5e; 
   color: white;
   text-align: center;
   padding: 1vw 0;
@@ -175,7 +175,7 @@ body {
   border: 0.2vw solid #f12121;
   border-radius: 0.5vw;
   width: 20vw;
-  box-shadow: 0 0 1vw rgba(254, 254, 254, 0.963);
+  box-shadow: 0 0 1vw rgba(6, 6, 6, 0.963);
 }
 
 #start {
@@ -219,10 +219,12 @@ body {
   border-radius: 0.3vw;
   transition: 0.3s;
   font-weight: 700;
+  width: 99%;
 }
 
 .select-powder select option {
   color: rgb(230, 18, 18);
+  width: 90%;
 }
 
 .weight-pycnometer {
@@ -247,6 +249,7 @@ body {
   border-radius: 0.3vw;
   transition: 0.3s;
   font-weight: 700;
+   width: 99%;
 }
 
 .weight-pycnometer select option {
@@ -358,6 +361,7 @@ body {
   z-index: 100;
 }
 #on-off-button {
+  
   position: relative;
   top: 5.4vw;
   left: -12.5vw;
@@ -366,7 +370,7 @@ body {
 #tare-button {
   position: relative;
   top: 5.4vw;
-  left: -6.5vw;
+  left: -6.3vw;
 }
 
 .powder div {
@@ -624,16 +628,19 @@ body {
   position:fixed;
   text-align: center;
   align-items: center;
-  top: 15vw;
-  left: 40vw;
+  top: 25vw;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+ 
   width: max-content;
-  height: max-content;
+  height: fit-content;
   background-color: rgb(255, 253, 253);
   z-index: 1010;
   display: none;
   box-shadow: 0 0 1vw rgba(11, 10, 10, 0.963);
   border-radius: 1vw;
   padding: 2vw;
+  font-size: 1.5vw;
 }
 
 .result button {

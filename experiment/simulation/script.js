@@ -5,8 +5,8 @@ let machineOn = false;
 let capTimeouts = {};
 let openBottle = false;
 let openCap = false;
-let lang = 'en';
-let count = 0;
+let lang = "en";
+let count = 1;
 let powderSelected = false;
 let start_simulatio = false;
 let weightValue = 15.04;
@@ -27,30 +27,30 @@ function showPowder() {
   }
 }
 
-function changeLang(el) { 
+function changeLang(el) {
   lang = el.value;
 }
 
-function showWeight(el) { 
+function showWeight(el) {
   switch (el.value) {
     case "e":
-     weightValue = 15.2;
+      weightValue = 15.2;
       break;
     case "pw":
-     weightValue = 31.4;
+      weightValue = 31.4;
       break;
     case "pp":
       weightValue = 25.05;
       break;
     default:
-       weightValue = 40.55;
+      weightValue = 40.55;
       break;
   }
 }
 
 function start_simulation() {
   start_simulatio = true;
-  if (count === 0) {
+  if (count === 1) {
     showInstructions();
   }
 }
@@ -61,7 +61,7 @@ function showInstructions() {
     alert("Click on start simulation button to start the simulation.");
     return;
   }
-  count++;
+
   const instructionSpan = document.getElementById("instruction");
   const instructions = {
     1: "1. Choose the language of instruction: English or Hindi.",
@@ -83,17 +83,16 @@ function showInstructions() {
   if (instructionText) {
     instructionSpan.textContent = instructionText;
   } else {
-    instructionSpan.textContent = "All instructions completed.";
+    instructionSpan.textContent = "Simulation complete.";
     document.getElementById("next").style.display = "none";
   }
   const Sound = document.getElementById("Sound");
   if (lang === "hi") {
     Sound.src = `./sounds/hi${count}.mp3`;
-  }
-  else {
+  } else {
     Sound.src = `./sounds/ins${count}.mp3`;
   }
-  
+
   Sound.currentTime = 0;
   Sound.play();
   switch (count) {
@@ -134,8 +133,10 @@ function showInstructions() {
         document.getElementById("pycnometer").style.backgroundImage =
           "url('./images/pycnometerwater.png')";
         document.getElementById("pycnometer").style.backgroundSize = "90% 80%";
-        document.getElementById("pycnometer").style.backgroundRepeat = "no-repeat";
-        document.getElementById("pycnometer").style.backgroundPosition ="bottom";
+        document.getElementById("pycnometer").style.backgroundRepeat =
+          "no-repeat";
+        document.getElementById("pycnometer").style.backgroundPosition =
+          "bottom";
         document
           .getElementById("pycnometer")
           .classList.remove("water-in-pycnometer");
@@ -145,7 +146,7 @@ function showInstructions() {
       }, 2000);
       break;
     case 8:
-       document.getElementById("pycnometer").style.backgroundImage ="url()";
+      document.getElementById("pycnometer").style.backgroundImage = "url()";
       break;
     case 9:
       toggleCapBottole();
@@ -155,19 +156,54 @@ function showInstructions() {
     case 10:
       useSpatula(document.getElementById("spetula"));
       setTimeout(() => {
-    toggleFunnel(document.querySelector("#funnel"));
-    toggleCap();
-    toggleCapBottole();
-  }, 6000);
+        toggleFunnel(document.querySelector("#funnel"));
+        toggleCapBottole();
+        document
+          .getElementById("pycnometer")
+          .classList.remove("powder-in-pycnometer");
+        toggleBottle();
+        weightValue = 25.4;
+        measurWeight();
+      }, 6000);
 
       break;
     case 11:
       toggleCapBottole();
       toggleFunnel(document.querySelector("#funnel"));
-       document.querySelector(".beaker").classList.add("move-beaker-on-pycnometer");
       setTimeout(() => {
-         toggleFunnel(document.querySelector("#funnel"));
+        document
+          .querySelector(".beaker")
+          .classList.remove("move-beaker-on-pycnometer");
+        document
+          .querySelector(".beaker")
+          .classList.remove("move-beaker-on-tap");
+        document
+          .querySelector(".beaker")
+          .classList.add("move-beaker-on-pycnometer");
+        setTimeout(() => {
+          document
+            .getElementById("pycnometer")
+            .classList.remove("water-in-pycnometer");
+          document.getElementById("pycnometer").style.backgroundImage =
+            "";
+          document
+            .getElementById("pycnometer")
+            .classList.add("water-in-pycnometer");
+        }, 1500);
+      }, 3000);
+      setTimeout(() => {
+        toggleFunnel(document.querySelector("#funnel"));
         toggleCapBottole();
+        document.getElementById("pycnometer").style.backgroundImage =
+          "url('./images/pycnometerwater.png')";
+        document.getElementById("pycnometer").style.backgroundSize = "90% 80%";
+        document.getElementById("pycnometer").style.backgroundRepeat =
+          "no-repeat";
+        document.getElementById("pycnometer").style.backgroundPosition =
+          "bottom";
+        document
+          .getElementById("pycnometer")
+          .classList.remove("water-in-pycnometer");
         toggleBottle();
         weightValue = 40.55;
         measurWeight();
@@ -176,6 +212,7 @@ function showInstructions() {
     default:
       break;
   }
+  count++;
 }
 
 function fill_water_in_pycnometer() {
@@ -186,30 +223,47 @@ function fill_water_in_pycnometer() {
 function toggleMachine(btn) {
   machineOn = !machineOn;
   btn.textContent = machineOn ? "ON" : "OFF";
+  if(machineOn){
+     const display = document.getElementById("display");
+  display.textContent = "0.00g";
+  }
+  else{
+     const display = document.getElementById("display");
+  display.textContent = " ";
+  }
 }
 
 function toggleTrf(btn) {
-  const display = document.getElementById("display");
+   if(machineOn){
+     const display = document.getElementById("display");
   display.textContent = "0.00g";
+  }
 }
 
 function useSpatula(el) {
   if (!openCap) {
-    toggleCapBottole();
+    toggleCap();
+  }
 
-  }
-  if (!funnelOnBottle) {
-    alert("place the funnel on the bottle first.");
-    return;
-  }
   el.classList.toggle("move-spetula");
-  
-  
-  setTimeout(() => { 
+
+  setTimeout(() => {
     document.getElementById("spatula-powder11").style.display = "block";
-    setTimeout(() => { 
-    document.getElementById("spatula-powder11").style.display = "none";
-  }, 1800);
+    setTimeout(() => {
+      document.getElementById("spatula-powder11").style.display = "none";
+      document
+        .getElementById("pycnometer")
+        .classList.remove("water-in-pycnometer");
+      document.getElementById("pycnometer").style.backgroundImage =
+        "url('./images/samplepowder.png')";
+      document.getElementById("pycnometer").style.backgroundSize = "60% 50%";
+      document.getElementById("pycnometer").style.backgroundRepeat =
+        "no-repeat";
+      document.getElementById("pycnometer").style.backgroundPosition = "bottom";
+      document
+        .getElementById("pycnometer")
+        .classList.add("powder-in-pycnometer");
+    }, 1800);
   }, 1800);
 
   // setTimeout(() => {
@@ -249,12 +303,9 @@ function resetFields() {
 
 function measurWeight() {
   if (!bottleOnWeight) {
-    alert(
-      "Place the bottle on the weight machine first then click on measure weight ."
-    );
-    return;
+    toggleBottle();
   }
-  
+
   setTimeout(() => {
     // if (weightValue >= 40 ) {
     //   animateWeight(bottleOnWeight ? 40.55 : 0.0);
@@ -277,7 +328,7 @@ function measurWeight() {
     //   animateWeight(bottleOnWeight ? 15.2 : 0.0);
     //   weightValue = 15.2;
     // }
-     animateWeight(bottleOnWeight ? weightValue : 0.0);
+    animateWeight(bottleOnWeight ? weightValue : 0.0);
   }, 1500);
 
   setTimeout(() => {
@@ -296,77 +347,93 @@ function closePopup() {
 }
 
 function observationTable() {
-  const popup = document.getElementById("popupOverlay");
-  const result = document.getElementById("measurementResult");
+  const popup = document.getElementById("popup");
+  const result = document.getElementById("result");
+  const resultp = document.getElementById("resultp");
   const Sound = document.getElementById("Sound");
 
   const tableHTML = `
-      <table style="width: 100%; border-collapse: collapse;">
+      <table style="width=max-content; border-collapse: collapse;">
         <thead>
           <tr>
-            <th style="border: 2px solid black; padding: 8px; width: 140px">W1(Empty Pycnometer)</th>
-            <th style="border: 2px solid black; padding: 8px; width: 140px">W2(Pycnometer with water)</th>
-            <th style="border: 2px solid black; padding: 8px; width: 140px">W3(Pycnometer with Powder)</th>
-            <th style="border: 2px solid black; padding: 8px; width: 140px">W4(Pycnometer with Powder and Water)</th>
+            <th style="border: .2vw solid black; padding: .8vw; width: 14vw">W1(Empty Pycnometer)</th>
+            <th style="border: .2vw solid black; padding: .8vw; width: 14vw">W2(Pycnometer with water)</th>
+            <th style="border: .2vw solid black; padding: .8vw; width: 14vw">W3(Pycnometer with Powder)</th>
+            <th style="border: .2vw solid black; padding: .8vw; width: 14vw">W4(Pycnometer with Powder and Water)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style="border: 2px solid black; padding: 8px; width: 140px">15.20g</td>
-            <td style="border: 2px solid black; padding: 8px; width: 140px">31.40g</td>
-            <td style="border: 2px solid black; padding: 8px; width: 140px">25.05g</td>
-            <td style="border: 2px solid black; padding: 8px; width: 140px">40.55g</td>
+            <td style="border: .2vw solid black; padding: .8vw; width: 14vw">15.20g</td>
+            <td style="border: .2vw solid black; padding: .8vw; width: 14vw">31.40g</td>
+            <td style="border: .2vw solid black; padding: .8vw; width: 14vw">25.05g</td>
+            <td style="border: .2vw solid black; padding: .8vw; width: 14vw">40.55g</td>
           </tr>
         </tbody>
       </table>
     `;
-  document.querySelector("h3").innerText = "Observation Table";
-  result.innerHTML = tableHTML;
+  document.querySelector("h2").innerText = "Observation Table";
+  resultp.innerHTML = tableHTML;
   popup.style.display = "block";
+  result.style.display = "block";
 
-  // setTimeout(() => {
-
-  //   Sound.src = `./sounds/observation.mp3`;
-  //   Sound.currentTime = 0;
-  //   Sound.play();
-  // }, 2000)
+  setTimeout(() => {
+    Sound.src = `./sounds/observation.mp3`;
+    Sound.currentTime = 0;
+    Sound.play();
+  }, 1000);
 }
 
 function calculateDensity() {
-  const popup = document.getElementById("popupOverlay");
-  const result = document.getElementById("measurementResult");
-  const resultHTML = `
-   <table style="width: 100%; border-collapse: collapse;">
+  const popup = document.getElementById("popup");
+  const result = document.getElementById("result");
+  const resultp = document.getElementById("resultp");
+  resultp.innerText = `
+   <table style="width=max-content; border-collapse: collapse;">
         <tbody>
           <tr>
-            <td style="border: 2px solid black; padding: 8px; width: 140px"><p>Weight of empty pycnometer : <b>W1</b></p></td>
-            <td style="border: 2px solid black; padding: 8px; width: 140px"><p> Weight of pycnometer with water: <b>W2</b></p></td>
+            <td style="border: .2vw solid black; padding: .8vw; width: 14vw"><p>Weight of empty pycnometer : <b>W1</b></p></td>
+            <td style="border: .2vw solid black; padding: .8vw; width: 14vw"><p> Weight of pycnometer with water: <b>W2</b></p></td>
              <td style="border: 2px solid black; padding: 8px; width: 100px"><p>  Weight of  pycnometer with powder: <b>W3</b></p></td>
-             <td style="border: 2px solid black; padding: 8px; width: 140px"><p> Weight of pycnometer with water and powder: <b>W4</b></p></p></td>
+             <td style="border: .2vw solid black; padding: .8vw; width: 14vw"><p> Weight of pycnometer with water and powder: <b>W4</b></p></p></td>
+          </tr>
+        </tbody>
+      </table>
+  `;
+  popup.style.display = "block";
+  result.style.display = "block";
+  const resultHTML = `
+   <table style="width=max-content; border-collapse: collapse;">
+        <tbody>
+          <tr>
+            <td style="border: .2vw solid black; padding: .8vw; width: 14vw"><p>Weight of empty pycnometer : <b>W1</b></p></td>
+            <td style="border: .2vw solid black; padding: .8vw; width: 14vw"><p> Weight of pycnometer with water: <b>W2</b></p></td>
+             <td style="border: .2vw solid black; padding: .8vw; width: 10vw"><p>  Weight of  pycnometer with powder: <b>W3</b></p></td>
+             <td style="border: .2vw solid black; padding: .8vw; width: 14vw"><p> Weight of pycnometer with water and powder: <b>W4</b></p></p></td>
           </tr>
         </tbody>
       </table>
   `;
   setTimeout(() => {
-    popup.style.display = "none";
+    // popup.style.display = "none";
     const resultHTML2 = `
-    <table style="width: 100%; border-collapse: collapse;">
+    <table style="width=max-content; border-collapse: collapse;">
     
      
      <tr>
-        <td style="border: 2px solid black; padding: 8px; width: 340px"> Volume of powder = volume of water displaced.</td>
+        <td style="border: .2vw solid black; padding: .8vw; width: 34vw"> Volume of powder = volume of water displaced.</td>
      </tr>
-     <tr><td style="border: 2px solid black; padding: 8px; width: 340px">
+     <tr><td style="border: .2vw solid black; padding: .8vw; width: 34vw">
     V=(W4-W1)-(W3-W2).</td></tr>
-    <tr><td style="border: 2px solid black; padding: 8px; width: 340px">
+    <tr><td style="border: .2vw solid black; padding: .8vw; width: 34vw">
     V=(40.55-15.20)-(25.05-31.40).</td></tr>
 
-     <tr><td style="border: 2px solid black; padding: 8px; width: 340px">
+     <tr><td style="border: .2vw solid black; padding: .8vw; width: 34vw">
     V=31.70cm³.<br></td></tr>
-    <tr><td style="border: 2px solid black; padding: 8px; width: 340px">
+    <tr><td style="border: .2vw solid black; padding: .8vw; width: 34vw">
     True density = mass of powder(W4-W2)/volume of powder(V)..</td></tr>
     
-    <tr><td style="border: 2px solid black; padding: 8px; width: 340px">
+    <tr><td style="border: .2vw solid black; padding: .8vw; width: 34vw">
     <b>True density = 0.2886g/cm³.</b></td></tr>
     
     
@@ -374,18 +441,18 @@ function calculateDensity() {
      
     </table>
     `;
-    document.querySelector("h3").innerText = "Calculation Result";
-    result.innerHTML = resultHTML2;
-    popup.style.display = "block";
+    document.querySelector("h2").innerText = "Calculation Result";
+    resultp.innerHTML = resultHTML2;
+    // popup.style.display = "block";
     const Sound = document.getElementById("Sound");
     Sound.src = `./sounds/calculate.mp3`;
     Sound.currentTime = 0;
     Sound.play();
   }, 15000);
 
-  document.querySelector("h3").innerText = "Representations";
-  result.innerHTML = resultHTML;
-  popup.style.display = "block";
+  document.querySelector("h2").innerText = "Representations";
+  resultp.innerHTML = resultHTML;
+  // popup.style.display = "block";
 
   setTimeout(() => {
     const Sound = document.getElementById("Sound");
@@ -420,7 +487,7 @@ function flowWater(event) {
 
 function toggleCap() {
   openCap = !openCap;
-   
+
   const cap = document.querySelector(`#powder-cap`);
   cap.classList.toggle("open-cap");
   // clearTimeout(capTimeouts[type]);
@@ -431,7 +498,7 @@ function toggleCap() {
 }
 function toggleCapBottole() {
   if (funnelOnBottle) {
-      toggleFunnel(document.querySelector("#funnel"));
+    toggleFunnel(document.querySelector("#funnel"));
   }
   openBottle = !openBottle;
   const cap = document.querySelector("#bottle-cap");
@@ -444,8 +511,7 @@ function toggleBottle() {
     return;
   }
   if (openBottle) {
-    alert("close the pycnometer cap first");
-    return;
+    toggleCapBottole();
   }
   bottleOnWeight = !bottleOnWeight;
   if (!bottleOnWeight) {
