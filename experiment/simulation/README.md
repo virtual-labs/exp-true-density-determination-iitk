@@ -1,0 +1,5 @@
+# True-Density-Determination-Of-Pharmaceutical-Powders
+Project Goal:The repository contains the code and assets for a Virtual Laboratory Simulation focused on the Determination of True Density of Pharmaceutical Powders.
+Purpose of the V-Lab:To simulate the physical chemistry experiment, likely using the Liquid Displacement Method (pycnometry), which is a core concept in the field of Physical Pharmaceutics (Micromeritics).It allows students to understand the principles, apparatus (like the pycnometer, weighing machine), and steps involved in measuring the true density of powder materials (e.g., Benzoic Acid) virtually.
+The simulation includes:Lab Control Center: For starting the simulation, selecting the powder, and selecting the weight.Observation: A section to record or view the readings from the virtual experiment.Calculation: A section to perform the necessary mathematical steps (e.g., using the formula $\rho_{\text{true}} = M / V_{\text{true}}$).
+Simulation Objects: Visual elements like a beaker, powder, weight-machine, and pycnometer to interact with.

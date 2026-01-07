@@ -2,35 +2,86 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "1. The main reason for using a pycnometer in true density measurement is:",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "It has a larger capacity",
+        "b": "It is made of glass",
+        "c": "It allows accurate volume measurement by minimizing void spaces",
+        "d": "It gives bulk density directly"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Explanation",
+        "b": "Explanation",
+        "c": "Explanation",
+        "d": "Explanation"
       },
-      "correctAnswer": "a",
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
-    {
-      "question": "This is a Sample Question 2?",
+       {
+      "question": "2. If the powder partially dissolves in the solvent, the measured density will be:",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Correct",
+        "b": "Lower than the actual true density",
+        "c": "Higher than the actual true density",
+        "d": "Unchanged"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Explanation",
+        "b": "Explanation",
+        "c": "Explanation",
+        "d": "Explanation"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+        {
+      "question": "3. The difference (W₂ – W₁) represents:",
+      "answers": {
+        "a": "Weight of powder",
+        "b": "Weight of liquid required to fill the pycnometer",
+        "c": "Weight of displaced liquid",
+        "d": "Volume of powder"
+      },
+      "explanations": {
+        "a": "Explanation",
+        "b": "Explanation",
+        "c": "Explanation",
+        "d": "Explanation"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+        {
+      "question": "4. The mass of displaced liquid is calculated using:",
+      "answers": {
+        "a": "(W₃ – W₁)",
+        "b": "(W₄ – W₃)",
+        "c": "(W₂ – W₁) – (W₄ – W₃)",
+        "d": "(W₁ – W₂)"
+      },
+      "explanations": {
+        "a": "Explanation",
+        "b": "Explanation",
+        "c": "Explanation",
+        "d": "Explanation"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+        {
+      "question": "5. Maintaining constant temperature during the experiment is important because:",
+      "answers": {
+        "a": "It affects solubility only",
+        "b": "It prevents solvent evaporation",
+        "c": "Liquid density changes with temperature affecting accuracy",
+        "d": "It helps in mixing the powder"
+      },
+      "explanations": {
+        "a": "Explanation",
+        "b": "Explanation",
+        "c": "Explanation",
+        "d": "Explanation"
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
