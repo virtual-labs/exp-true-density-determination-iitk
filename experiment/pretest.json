@@ -9,12 +9,7 @@
         "c": "Weight of powder per bulk volume",
         "d": "Ratio of volume to surface area"
       },
-      "explanations": {
-        "a": "Explanation",
-        "b": "Explanation",
-        "c": "Explanation",
-        "d": "Explanation"
-      },
+     
       "correctAnswer": "b",
       "difficulty": "beginner"
     },
@@ -26,12 +21,7 @@
         "c": "Pipette",
         "d": "Burette"
       },
-      "explanations": {
-        "a": "Explanation",
-        "b": "Explanation",
-        "c": "Explanation",
-        "d": "Explanation"
-      },
+
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
@@ -43,12 +33,7 @@
         "c": "A volatile solvent only",
         "d": "A mixture of solvents"
       },
-      "explanations": {
-        "a": "Explanation",
-        "b": "Explanation",
-        "c": "Explanation",
-        "d": "Explanation"
-      },
+
       "correctAnswer": "b",
       "difficulty": "beginner"
     },
@@ -60,12 +45,7 @@
         "c": "Cause errors by increasing apparent volume",
         "d": "Decrease mass of displaced liquid"
       },
-      "explanations": {
-        "a": "Explanation",
-        "b": "Explanation",
-        "c": "Explanation",
-        "d": "Explanation"
-      },
+      
       "correctAnswer": "c",
       "difficulty": "beginner"
     },
@@ -77,12 +57,7 @@
         "c": "ρₜ = Volume of liquid / Weight of bottle",
         "d": "ρₜ = (W₂ – W₁) / (W₄ – W₃)"
       },
-      "explanations": {
-        "a": "Explanation",
-        "b": "Explanation",
-        "c": "Explanation",
-        "d": "Explanation"
-      },
+
       "correctAnswer": "b",
       "difficulty": "beginner"
     }
