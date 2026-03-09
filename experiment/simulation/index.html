@@ -11,26 +11,18 @@
 <body>
   <header>
     <div class="header-container">
-      <h1>True Density Determination Lab</h1><br>
-       In this simulation, click the “Next” button to proceed and observe how the simulation works step by step.
-      <div class="instruction">
-        <label for="instruction">Instruction : </label>
-        <div id="instruction">Hello how are you? Click on Start Simulation</div>
-      </div>
-     
+      <h1>True Density Determination Lab</h1>
       <div class="language-button">
-        <!-- <label for="language">Select Language</label> -->
+        <label for="language">Select Language</label>
         <select name="language" id="language" onchange="changeLang(this)">
-          <label for="powder">Select Language</label>
-          <option value="en">Select Language</option>
           <option value="en">English</option>
           <option value="hi">हिन्दी</option>
         </select>
       </div>
-      <!-- <div class="instruction">
+      <div class="instruction">
         <label for="instruction">Instruction : </label>
         <div id="instruction">Hello how are you? Click on Start Simulation</div>
-      </div> -->
+      </div>
     </div>
   </header>
   <main>
@@ -39,8 +31,8 @@
       <div id="popup" class="popup">
       </div>
       <div id="result" class="result">
-        <h2>Result</h2>
-        <p id="resultp">hello how are you</p> <button onclick="closePopup()">Close</button>
+        <h2 id="modal-title">Result</h2>
+        <div id="resultp">hello how are you</div> <button onclick="closePopup()">Close</button>
       </div>
       <div class="sidebar-container">
         <h2>Lab Control Center</h2>
@@ -50,15 +42,12 @@
         <div class="select-powder">
           <label for="powder">Select Powder</label>
           <select name="powder" id="select-powder" onchange="showPowder()">
-            <option value="e" hidden selected>Select an Option</option>
             <option value="B">
-              <p>Benzoic Acid <br> (HOC<sub>6</sub>H<sub>4</sub>COOH)</p>
+              Benzoic Acid <br> (HOC<sub>6</sub>H<sub>4</sub>COOH)
             </option>
             <option value="S">
-              <p>
-                Salicyclic Acid <br>
-                (CACO<sub>3</sub>HOC<sub>6</sub>H<sub>4</sub>COOH)
-              </p>
+              Salicyclic Acid <br>
+              (CACO<sub>3</sub>HOC<sub>6</sub>H<sub>4</sub>COOH)
             </option>
           </select>
         </div>
@@ -73,19 +62,15 @@
           </select>
         </div>
         <div class="button-container">
-          <!-- <button>Measurment</button> -->
           <button onclick="observationTable()">Observation</button>
-          <button onclick="calculateDensity()">Calculation</button>
-          <a href=""><button>Reset</button></a>
-          
+          <button onclick="calculateDensity()">Result</button>
+          <a href="index.html"><button>Reset</button></a>
         </div>
       </div>
       <div class="content-container">
-
         <div class="item-container">
           <div class="weight-machine">
             <img src="./images/weightmachine.png" alt="weight-machine" />
-
             <button id="on-off-button" onclick="toggleMachine(this)">
               OFF
             </button>
@@ -119,7 +104,6 @@
   </main>
   <footer>
     <div class="footer-container">
-      <!-- <p>&copy; 2025 True Density Deter Lab</p> -->
     </div>
   </footer>
   <script src="script.js"></script>
