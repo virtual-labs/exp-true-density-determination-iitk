@@ -43,7 +43,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
-  height: 100%;
+  height: 81%;
   /* padding: 2vw; */
   background-image: url(./images/background.png);
   background-size: 100% 100%;
@@ -263,7 +263,7 @@ body {
   align-items: center;
   margin-top: 0.5vw;
   width: 21vw;
-  height: 18vw;
+  height: 14vw;
   /* background-color: #f4f4f4; */
 }
 
@@ -349,7 +349,7 @@ body {
 }
 
 .weight-machine button {
-  width: 7vw !important;
+  width: 4vw !important;
   height: 1.5vw !important;
   background-color: #05a9bc;
   color: rgb(12, 12, 12);
@@ -362,14 +362,14 @@ body {
 }
 #on-off-button {
   position: relative;
-  top: 5.4vw;
-  left: -12.5vw;
+  top: 4.4vw;
+  left: -10.5vw;
 }
 
 #tare-button {
   position: relative;
-  top: 5.4vw;
-  left: -6.3vw;
+  top: 4.4vw;
+  left: -5.9vw;
 }
 
 .powder div {
