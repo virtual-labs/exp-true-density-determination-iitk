@@ -11,6 +11,8 @@ let powderSelected = false;
 let start_simulatio = false;
 let weightValue = 15.04;
 
+let W1 = 25.00, W2 = 50.00, W3 = 30.00, W4 = 52.00;
+let densityLiquid = 1.0;
 showPowder();
 function showPowder() {
   const powder = document.getElementById("select-powder").value;
@@ -19,9 +21,13 @@ function showPowder() {
   if (powder === "S") {
     powderImg.src = "./images/salicyclicacid.png";
     powderSelected = true;
+    W3 = 31.40; 
+    W4 = 53.00;
   } else if (powder === "B") {
     powderImg.src = "./images/Benzoicacid.png";
     powderSelected = true;
+    W3 = 30.0; 
+    W4 = 52.0;
   } else {
     document.getElementById("acid-powder").style.visibility = "hidden";
   }
@@ -32,20 +38,22 @@ function changeLang(el) {
 }
 
 function showWeight(el) {
+  if (!machineOn) return;
   switch (el.value) {
     case "e":
-      weightValue = 15.2;
+      weightValue = W1;
       break;
     case "pw":
-      weightValue = 31.4;
+      weightValue = W2;
       break;
     case "pp":
-      weightValue = 25.05;
+      weightValue = W3;
       break;
     default:
-      weightValue = 40.55;
+      weightValue = W4;
       break;
   }
+  animateWeight(weightValue);
 }
 
 function start_simulation() {
@@ -65,7 +73,7 @@ function showInstructions() {
   const instructionSpan = document.getElementById("instruction");
   const instructions = {
     1: "1. Choose the language of instruction: English or Hindi.",
-    2: "2. Prepare the Weigh Machine:* Switch it on.",
+    2: "2. Prepare the Weigh Machine: Click on the 'OFF' button to switch it ON.",
     3: "3. Weigh the Empty Pycnometer (W1):* Record the weight.",
     4: "4. Fill the Beaker with Water:* Prepare the solvent.",
     // 14: "14. Click on the tap to flow water into the beaker.",
@@ -99,11 +107,11 @@ function showInstructions() {
     case 1:
       break;
     case 2:
-      toggleMachine(document.querySelector("#on-off-button"));
+      // Removed automatic toggle to wait for user interaction
       break;
     case 3:
       toggleBottle();
-      weightValue = 15.2;
+      weightValue = W1;
       measurWeight();
       break;
     case 4:
@@ -141,7 +149,7 @@ function showInstructions() {
           .getElementById("pycnometer")
           .classList.remove("water-in-pycnometer");
         toggleBottle();
-        weightValue = 31.4;
+        weightValue = W2;
         measurWeight();
       }, 2000);
       break;
@@ -162,7 +170,7 @@ function showInstructions() {
           .getElementById("pycnometer")
           .classList.remove("powder-in-pycnometer");
         toggleBottle();
-        weightValue = 25.4;
+        weightValue = W3;
         measurWeight();
       }, 6000);
 
@@ -205,7 +213,7 @@ function showInstructions() {
           .getElementById("pycnometer")
           .classList.remove("water-in-pycnometer");
         toggleBottle();
-        weightValue = 40.55;
+        weightValue = W4;
         measurWeight();
       }, 11000);
       break;
@@ -224,18 +232,18 @@ function toggleMachine(btn) {
   machineOn = !machineOn;
   btn.textContent = machineOn ? "ON" : "OFF";
   if(machineOn){
-     const display = document.getElementById("display");
+      const display = document.getElementById("display");
   display.textContent = "0.00g";
   }
   else{
-     const display = document.getElementById("display");
+      const display = document.getElementById("display");
   display.textContent = " ";
   }
 }
 
 function toggleTrf(btn) {
    if(machineOn){
-     const display = document.getElementById("display");
+      const display = document.getElementById("display");
   display.textContent = "0.00g";
   }
 }
@@ -265,31 +273,6 @@ function useSpatula(el) {
         .classList.add("powder-in-pycnometer");
     }, 1800);
   }, 1800);
-
-  // setTimeout(() => {
-  //   document.querySelector(".powder").classList.toggle("powder-hiddne");
-  // }, 3000);
-  // setTimeout(() => {
-  //   document.querySelector(".bottle").classList.add("sample-powder");
-
-  //   const interval = setInterval(() => {
-  //     const powder = document.createElement("img");
-  //     powder.src = "./images/samplepowder.png";
-  //     powder.className = "powder-fill";
-
-  //     document.querySelector(".bottleDiv").appendChild(powder);
-  //     setTimeout(() => powder.remove(), 50);
-  //   }, 100);
-
-  //   document.querySelector(".powder").classList.toggle("powder-hiddne");
-  //   setTimeout(() => clearInterval(interval), 3000);
-  // }, 7000);
-
-  // setTimeout(() => {
-  //   el.classList.remove("animate_spatula", "animate_spatula-s");
-  //   toggleFunnel(document.querySelector(".funnel"));
-  //   toggleCapBottole();
-  // }, 10000);
 }
 
 function resetFields() {
@@ -307,27 +290,6 @@ function measurWeight() {
   }
 
   setTimeout(() => {
-    // if (weightValue >= 40 ) {
-    //   animateWeight(bottleOnWeight ? 40.55 : 0.0);
-    //   weightValue = 41.55;
-    // } else if (
-    //   document
-    //     .querySelector(".pycnometer")
-    //     .classList.contains("powder-in-pycnometer")
-    // ) {
-    //   animateWeight(bottleOnWeight ? 25.05 : 0.0);
-    //   weightValue = 25.05;
-    // } else if (
-    //   document
-    //     .querySelector(".pycnometer")
-    //     .classList.contains("water-in-pycnometer")
-    // ) {
-    //   animateWeight(bottleOnWeight ? 31.4 : 0.0);
-    //   weightValue = 31.4;
-    // } else {
-    //   animateWeight(bottleOnWeight ? 15.2 : 0.0);
-    //   weightValue = 15.2;
-    // }
     animateWeight(bottleOnWeight ? weightValue : 0.0);
   }, 1500);
 
@@ -353,7 +315,7 @@ function observationTable() {
   const Sound = document.getElementById("Sound");
 
   const tableHTML = `
-      <table style="width=max-content; border-collapse: collapse;">
+      <table style="width: 100%; border-collapse: collapse;">
         <thead>
           <tr>
             <th style="border: .2vw solid black; padding: .8vw; width: 14vw">W1(Empty Pycnometer)</th>
@@ -364,10 +326,10 @@ function observationTable() {
         </thead>
         <tbody>
           <tr>
-            <td style="border: .2vw solid black; padding: .8vw; width: 14vw">15.20g</td>
-            <td style="border: .2vw solid black; padding: .8vw; width: 14vw">31.40g</td>
-            <td style="border: .2vw solid black; padding: .8vw; width: 14vw">25.05g</td>
-            <td style="border: .2vw solid black; padding: .8vw; width: 14vw">40.55g</td>
+            <td style="border: .2vw solid black; padding: .8vw; width: 14vw">${W1.toFixed(2)}g</td>
+            <td style="border: .2vw solid black; padding: .8vw; width: 14vw">${W2.toFixed(2)}g</td>
+            <td style="border: .2vw solid black; padding: .8vw; width: 14vw">${W3.toFixed(2)}g</td>
+            <td style="border: .2vw solid black; padding: .8vw; width: 14vw">${W4.toFixed(2)}g</td>
           </tr>
         </tbody>
       </table>
@@ -388,78 +350,42 @@ function calculateDensity() {
   const popup = document.getElementById("popup");
   const result = document.getElementById("result");
   const resultp = document.getElementById("resultp");
-  resultp.innerText = `
-   <table style="width=max-content; border-collapse: collapse;">
-        <tbody>
-          <tr>
-            <td style="border: .2vw solid black; padding: .8vw; width: 14vw"><p>Weight of empty pycnometer : <b>W1</b></p></td>
-            <td style="border: .2vw solid black; padding: .8vw; width: 14vw"><p> Weight of pycnometer with water: <b>W2</b></p></td>
-             <td style="border: 2px solid black; padding: 8px; width: 100px"><p>  Weight of  pycnometer with powder: <b>W3</b></p></td>
-             <td style="border: .2vw solid black; padding: .8vw; width: 14vw"><p> Weight of pycnometer with water and powder: <b>W4</b></p></p></td>
-          </tr>
-        </tbody>
-      </table>
-  `;
-  popup.style.display = "block";
-  result.style.display = "block";
-  const resultHTML = `
-   <table style="width=max-content; border-collapse: collapse;">
-        <tbody>
-          <tr>
-            <td style="border: .2vw solid black; padding: .8vw; width: 14vw"><p>Weight of empty pycnometer : <b>W1</b></p></td>
-            <td style="border: .2vw solid black; padding: .8vw; width: 14vw"><p> Weight of pycnometer with water: <b>W2</b></p></td>
-             <td style="border: .2vw solid black; padding: .8vw; width: 10vw"><p>  Weight of  pycnometer with powder: <b>W3</b></p></td>
-             <td style="border: .2vw solid black; padding: .8vw; width: 14vw"><p> Weight of pycnometer with water and powder: <b>W4</b></p></p></td>
-          </tr>
-        </tbody>
-      </table>
-  `;
-  setTimeout(() => {
-    // popup.style.display = "none";
-    const resultHTML2 = `
-    <table style="width=max-content; border-collapse: collapse;">
-    
-     
-     <tr>
-        <td style="border: .2vw solid black; padding: .8vw; width: 34vw"> Volume of powder = volume of water displaced.</td>
-     </tr>
-     <tr><td style="border: .2vw solid black; padding: .8vw; width: 34vw">
-    V=(W4-W1)-(W3-W2).</td></tr>
-    <tr><td style="border: .2vw solid black; padding: .8vw; width: 34vw">
-    V=(40.55-15.20)-(25.05-31.40).</td></tr>
 
-     <tr><td style="border: .2vw solid black; padding: .8vw; width: 34vw">
-    V=31.70cm³.<br></td></tr>
-    <tr><td style="border: .2vw solid black; padding: .8vw; width: 34vw">
-    True density = mass of powder(W4-W2)/volume of powder(V)..</td></tr>
+  let massPowder = (W3 - W1).toFixed(2);
+  let displacedWater = ((W2 - W1) - (W4 - W3)).toFixed(2);
+  let volPowder = (displacedWater / densityLiquid).toFixed(2);
+  let trueDensity = (massPowder / volPowder).toFixed(2);
+
+  document.querySelector("h2").innerText = "Calculation Result";
+  
+  const resultHTML2 = `
+    <table style="width: 100%; border-collapse: collapse;">
+     <tr>
+        <td style="border: .2vw solid black; padding: .8vw;"> Volume of powder = volume of water displaced.</td>
+     </tr>
+     <tr><td style="border: .2vw solid black; padding: .8vw;">
+    V = (W4 - W3) - (W2 - W1) / density of water.</td></tr>
+    <tr><td style="border: .2vw solid black; padding: .8vw;">
+    V = (${W4.toFixed(2)} - ${W3.toFixed(2)}) - (${W2.toFixed(2)} - ${W1.toFixed(2)}) / ${densityLiquid}</td></tr>
+
+     <tr><td style="border: .2vw solid black; padding: .8vw;">
+    V = ${volPowder} mL<br></td></tr>
+    <tr><td style="border: .2vw solid black; padding: .8vw;">
+    True density = mass of powder (W3 - W1) / volume of powder (V).</td></tr>
     
-    <tr><td style="border: .2vw solid black; padding: .8vw; width: 34vw">
-    <b>True density = 0.2886g/cm³.</b></td></tr>
-    
-    
-    
-     
+    <tr><td style="border: .2vw solid black; padding: .8vw;">
+    <b>True density = ${trueDensity} g/mL.</b></td></tr>
     </table>
     `;
-    document.querySelector("h2").innerText = "Calculation Result";
+
     resultp.innerHTML = resultHTML2;
-    // popup.style.display = "block";
+    popup.style.display = "block";
+    result.style.display = "block";
+
     const Sound = document.getElementById("Sound");
     Sound.src = `./sounds/calculate.mp3`;
     Sound.currentTime = 0;
     Sound.play();
-  }, 15000);
-
-  document.querySelector("h2").innerText = "Representations";
-  resultp.innerHTML = resultHTML;
-  // popup.style.display = "block";
-
-  setTimeout(() => {
-    const Sound = document.getElementById("Sound");
-    Sound.src = `./sounds/observation.mp3`;
-    Sound.currentTime = 0;
-    Sound.play();
-  }, 500);
 }
 
 function flowWater(event) {
@@ -490,7 +416,6 @@ function toggleCap() {
 
   const cap = document.querySelector(`#powder-cap`);
   cap.classList.toggle("open-cap");
-  // clearTimeout(capTimeouts[type]);
   capTimeouts = setTimeout(() => {
     cap.classList.toggle("open-cap");
     openCap = false;
@@ -552,37 +477,6 @@ function toggleBeaker(el) {
       Sound.play();
     }, 3000);
   }
-
-  // if (
-  //   document.querySelector("#beaker").classList.contains("fill") &&
-  //   !el.classList.contains("on-tap")
-  // ) {
-  //   if (!funnelOnBottle) {
-  //     alert("place the funnel on bottle first ");
-  //     return;
-  //   }
-
-  //   el.classList.toggle("filled-beaker");
-  //   document.querySelector(".bottle").classList.add("water-bottle");
-  //   setTimeout(() => {
-  //     toggleFunnel(document.querySelector(".funnel"));
-  //     el.classList.toggle("fill-bottle");
-  //   }, 5000);
-  // } else {
-  //   el.classList.toggle("on-tap");
-  // }
-  // setTimeout(() => {
-  //   const tapElement = document.querySelector(".tap");
-  //   const fakeEvent = {
-  //     target: tapElement,
-  //   };
-
-  //   flowWater(fakeEvent);
-  // }, 2500);
-
-  // setTimeout(() => {
-  //   el.classList.remove("on-tap");
-  // }, 8000);
 }
 
 function animateWeight(target) {
@@ -605,10 +499,8 @@ function toggleFlip(element) {
 function changeLanguage(lang) {
   if (lang === "hi") {
     alert("हिंदी भाषा चुनी गई है। (Hindi selected)");
-    // You can extend this to change UI text dynamically
   } else if (lang === "en") {
     alert("English language selected.");
-    // Extend to update UI text back to English
   }
 }
 

@@ -4,7 +4,7 @@ body {
   padding: 0;
   width: 100vw;
   height: fit-content;
-  overflow: auto; 
+  overflow: hidden; 
 }
 
 .header-container {
@@ -13,8 +13,7 @@ body {
   width: 100%;
   height: 6vw;
   z-index: 1000;
-  /* background-color: #1bf906; */
-  background-color: black;
+  background-color: #1bf906;
   color: white;
   padding: 10px;
   text-align: center;
@@ -44,7 +43,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
-  height: 100%;
+  height: 81%;
   /* padding: 2vw; */
   background-image: url(./images/background.png);
   background-size: 100% 100%;
@@ -250,7 +249,7 @@ body {
   border-radius: 0.3vw;
   transition: 0.3s;
   font-weight: 700;
-   width: 99%;
+  width: 99%;
 }
 
 .weight-pycnometer select option {
@@ -264,7 +263,7 @@ body {
   align-items: center;
   margin-top: 0.5vw;
   width: 21vw;
-  height: 18vw;
+  height: 11vw;
   /* background-color: #f4f4f4; */
 }
 
@@ -291,7 +290,7 @@ body {
 .instruction {
   display: flex;
   position: relative;
-  top: 2.3vw;
+  top: -2.3vw;
   left: 23vw;
   width: max-content;
   max-width: 65vw;
@@ -305,12 +304,13 @@ body {
   font-weight: 700;
   margin: 0;
   padding: 0;
+
   text-shadow: 0 0 0.5vw red;
 }
 
 #instruction {
-  font-size: 1.5vw;
-  font-weight: 600;
+  font-size: 2vw;
+  font-weight: 700;
   margin: 0;
   padding: 0;
   color: #2df305;
@@ -349,7 +349,7 @@ body {
 }
 
 .weight-machine button {
-  width: 7vw !important;
+  width: 4vw !important;
   height: 1.5vw !important;
   background-color: #05a9bc;
   color: rgb(12, 12, 12);
@@ -361,16 +361,15 @@ body {
   z-index: 100;
 }
 #on-off-button {
-  
   position: relative;
-  top: 5.4vw;
-  left: -12.5vw;
+  top: 4.4vw;
+  left: -10.5vw;
 }
 
 #tare-button {
   position: relative;
-  top: 5.4vw;
-  left: -6.3vw;
+  top: 4.4vw;
+  left: -5.9vw;
 }
 
 .powder div {
@@ -495,7 +494,7 @@ body {
   background-image: url(./images/beakerwater.png);
   background-repeat: no-repeat;
   background-position: bottom;
-   background-size: 78% 70%;
+  background-size: 78% 70%;
 }
 @keyframes move-beaker {
   0% {
@@ -542,34 +541,18 @@ body {
   }
   65% {
     transform: translate(-30.5vw, -10vw) scale(0.4);
-     background-size: 78% 70%;
+    background-size: 78% 70%;
   }
   90% {
     transform: translate(0, -10vw) scale(0.6);
-     background-size: 78% 70%;
+    background-size: 78% 70%;
   }
 
   100% {
     transform: translate(0, 0);
-     background-size: 78% 70%;
-  }
-}
-
-/* .filled-beaker {
-  background-image: url(./images/beakerwater.png);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  animation: fill-beaker 2s linear !important;
-  animation-fill-mode: forwards !important;
-}
-@keyframes fill-beaker {
-  0% {
-    background-size: 78% 0;
-  }
-  100% {
     background-size: 78% 70%;
   }
-} */
+}
 
 .powder-in-pycnometer {
   background-image: url(./images/samplepowder.png);
@@ -605,15 +588,12 @@ body {
 
 #display {
   position: relative;
-  top: 5.1vw;
-  left: -13vw;
-  font-size: 1.6vw;
+  top: 4.1vw;
+  left: -11vw;
+  font-size: 1.3vw;
   color: #09f419;
 }
 .popup {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   position: absolute;
   top: 8vw;
   width: 100%;
@@ -625,14 +605,13 @@ body {
 }
 
 .result {
-  position:fixed;
+  position: fixed;
   text-align: center;
   align-items: center;
-  top: 25vw;
-  left: 50vw;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
- 
-  width: max-content;
+  width: 60%;
   height: fit-content;
   background-color: rgb(255, 253, 253);
   z-index: 1010;
@@ -641,6 +620,19 @@ body {
   border-radius: 1vw;
   padding: 2vw;
   font-size: 1.5vw;
+}
+
+/* Dynamic table styling for result and observation */
+.result table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1vw;
+}
+
+.result th, .result td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
 }
 
 .result button {
@@ -652,6 +644,7 @@ body {
   cursor: pointer;
   font-size: 1.5vw;
   border-radius: 0.4vw;
+  margin-top: 1vw;
 }
 
 #spatula-powder11{
