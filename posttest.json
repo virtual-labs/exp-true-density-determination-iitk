@@ -1,0 +1,65 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. The main reason for using a pycnometer in true density measurement is:",
+      "answers": {
+        "a": "It has a larger capacity",
+        "b": "It is made of glass",
+        "c": "It allows accurate volume measurement by minimizing void spaces",
+        "d": "It gives bulk density directly"
+      },
+
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+       {
+      "question": "2. If the powder partially dissolves in the solvent, the measured density will be:",
+      "answers": {
+        "a": "Correct",
+        "b": "Lower than the actual true density",
+        "c": "Higher than the actual true density",
+        "d": "Unchanged"
+      },
+
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+        {
+      "question": "3. The difference (W₂ – W₁) represents:",
+      "answers": {
+        "a": "Weight of powder",
+        "b": "Weight of liquid required to fill the pycnometer",
+        "c": "Weight of displaced liquid",
+        "d": "Volume of powder"
+      },
+
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+        {
+      "question": "4. The mass of displaced liquid is calculated using:",
+      "answers": {
+        "a": "(W₃ – W₁)",
+        "b": "(W₄ – W₃)",
+        "c": "(W₂ – W₁) – (W₄ – W₃)",
+        "d": "(W₁ – W₂)"
+      },
+      
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+        {
+      "question": "5. Maintaining constant temperature during the experiment is important because:",
+      "answers": {
+        "a": "It affects solubility only",
+        "b": "It prevents solvent evaporation",
+        "c": "Liquid density changes with temperature affecting accuracy",
+        "d": "It helps in mixing the powder"
+      },
+
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    }
+  ]
+}

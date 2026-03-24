@@ -1,0 +1,23 @@
+
+/home/runner/work/exp-true-density-determination-iitk/exp-true-density-determination-iitk/experiment/simulation/script.js
+    3:5   warning  'beakerAtTap' is assigned a value but never used      no-unused-vars
+    5:5   warning  'capTimeouts' is assigned a value but never used      no-unused-vars
+   10:5   warning  'powderSelected' is assigned a value but never used   no-unused-vars
+   36:10  warning  'changeLang' is defined but never used                no-unused-vars
+   40:10  warning  'showWeight' is defined but never used                no-unused-vars
+   59:10  warning  'start_simulation' is defined but never used          no-unused-vars
+  226:10  warning  'fill_water_in_pycnometer' is defined but never used  no-unused-vars
+  231:10  warning  'toggleMachine' is defined but never used             no-unused-vars
+  244:10  warning  'toggleTrf' is defined but never used                 no-unused-vars
+  244:20  warning  'btn' is defined but never used                       no-unused-vars
+  278:10  warning  'resetFields' is defined but never used               no-unused-vars
+  306:10  warning  'closePopup' is defined but never used                no-unused-vars
+  311:10  warning  'observationTable' is defined but never used          no-unused-vars
+  349:10  warning  'calculateDensity' is defined but never used          no-unused-vars
+  391:10  warning  'flowWater' is defined but never used                 no-unused-vars
+  495:10  warning  'toggleFlip' is defined but never used                no-unused-vars
+  499:10  warning  'changeLanguage' is defined but never used            no-unused-vars
+  507:10  warning  'handleRadioChange' is defined but never used         no-unused-vars
+
+✖ 18 problems (0 errors, 18 warnings)
+

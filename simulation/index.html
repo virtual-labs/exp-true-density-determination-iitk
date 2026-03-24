@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>True Density Determination Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <h1>True Density Determination Lab</h1>
+      <div class="language-button">
+        <label for="language">Select Language</label>
+        <select name="language" id="language" onchange="changeLang(this)">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+        </select>
+      </div>
+      <div class="instruction">
+        <label for="instruction">Instruction : </label>
+        <div id="instruction">Hello how are you? Click on Start Simulation</div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="main-container">
+      <audio id="Sound" src="" preload="auto"></audio>
+      <div id="popup" class="popup">
+      </div>
+      <div id="result" class="result">
+        <h2 id="modal-title">Result</h2>
+        <div id="resultp">hello how are you</div> <button onclick="closePopup()">Close</button>
+      </div>
+      <div class="sidebar-container">
+        <h2>Lab Control Center</h2>
+        <button id="start" onclick="start_simulation()">
+          Start Simulation
+        </button>
+        <div class="select-powder">
+          <label for="powder">Select Powder</label>
+          <select name="powder" id="select-powder" onchange="showPowder()">
+            <option value="B">
+              Benzoic Acid <br> (HOC<sub>6</sub>H<sub>4</sub>COOH)
+            </option>
+            <option value="S">
+              Salicyclic Acid <br>
+              (CACO<sub>3</sub>HOC<sub>6</sub>H<sub>4</sub>COOH)
+            </option>
+          </select>
+        </div>
+        <div class="weight-pycnometer">
+          <label for="weight-pycnometer">Select Weight</label>
+          <select name="weight-pycnometer" id="weight-pycnometer" onchange="showWeight(this)">
+            <option value="" hidden selected>Select an Option</option>
+            <option value="e">Empty Pycnometer</option>
+            <option value="pw">Pycnometer with Water</option>
+            <option value="pp">Pycnometer with Powder</option>
+            <option value="ppw">Pycnometer with Powder and Water</option>
+          </select>
+        </div>
+        <div class="button-container">
+          <button onclick="observationTable()">Observation</button>
+          <button onclick="calculateDensity()">Result</button>
+          <a href="index.html"><button>Reset</button></a>
+        </div>
+      </div>
+      <div class="content-container">
+        <div class="item-container">
+          <div class="weight-machine">
+            <img src="./images/weightmachine.png" alt="weight-machine" />
+            <button id="on-off-button" onclick="toggleMachine(this)">
+              OFF
+            </button>
+            <button id="tare-button" onclick="toggleTrf(this)">Tare</button>
+            <span id="display"> </span>
+          </div>
+          <div class="funnel">
+            <img src="./images/funnel.png" alt="funnel" class="" id="funnel" />
+          </div>
+          <div id="pycnometer" class="pycnometer">
+            <img src="./images/bottle.jpg" alt="pycnometer" />
+            <img src="./images/bottlecap.png" alt="bottlecap" id="bottle-cap" />
+          </div>
+          <div class="beaker ">
+            <img src="./images/beaker.png" alt="beaker" />
+          </div>
+          <div id="acid-powder" class="powder">
+            <img id="selected-powder" src="./images/Benzoicacid.png" alt="powder" />
+            <img src="./images/cap.png" alt="cap" id="powder-cap" class="" />
+          </div>
+          <div id="spetula" class="spetula">
+            <img src="./images/spatulla.png" alt="spetula" />
+            <img id="spatula-powder11" src="./images/chemicalpowderinspatualla.png" alt="powder">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="next-button" onclick="showInstructions()">
+      <button>Next--></button>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-container">
+    </div>
+  </footer>
+  <script src="script.js"></script>
+<script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+
+</html>
